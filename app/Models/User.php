@@ -4,6 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -24,7 +26,17 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'names',
+        'last_names',
+        'username',
+        'slug',
+        'gender',
+        'dni',
+        'phone',
+        'emergency_phone',
+        'nationality',
+        'role',
+        'active',
         'email',
         'password',
     ];
@@ -62,4 +74,23 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // Relationships
+
+    public function schedules(): HasMany
+    {
+        return $this->hasMany(Schedule::class, 'doctor_id');
+    }
+
+    public function specialties(): BelongsToMany
+    {
+        return $this->belongsToMany(Specialty::class, 'doctor_specialty', 'doctor_id', 'specialty_id');
+    }
+
+    public function appointments(): HasMany
+    {
+        return $this->hasMany(Appointment::class, 'doctor_id');
+    }
+
+
 }
