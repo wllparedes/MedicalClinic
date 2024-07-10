@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('days', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('cod');
+            $table->char('cod', 2);
             $table->boolean('its_workday')->default(1);
             $table->timestamps();
         });
