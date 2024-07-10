@@ -18,6 +18,8 @@ class Patient extends Model
         'slug',
         'gender',
         'birthday',
+        'district',
+        'province',
         'address',
         'dni',
         'phone',
