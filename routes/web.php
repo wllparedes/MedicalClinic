@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 
@@ -25,6 +26,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::get('/staff', function () {
             return view('admin.staff.index');
         })->name('staff');
-        
+
+        Route::get('staff/{user:slug}', function (User $user) {
+            return view('admin.staff.show', compact('user'));
+        })->name('staff.show');
     });
 });

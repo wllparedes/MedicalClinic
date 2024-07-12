@@ -63,9 +63,9 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $appends = [
-        'profile_photo_url',
-    ];
+    // protected $appends = [
+    //     'profile_photo_url',
+    // ];
 
     /**
      * Get the attributes that should be cast.
@@ -80,9 +80,16 @@ class User extends Authenticatable
         ];
     }
 
+    // Properties
+
     public function getUserTypeAttribute()
     {
         return 'user';
+    }
+
+    public function getFullNameAttribute(): string
+    {
+        return "{$this->names} {$this->last_names}";
     }
 
     // Relationships

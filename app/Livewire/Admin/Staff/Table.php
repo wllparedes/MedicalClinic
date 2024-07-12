@@ -49,7 +49,9 @@ final class Table extends PowerGridComponent
 
     public function datasource(): Builder
     {
-        return User::query();
+        return User::with([
+            'file' => fn ($q) => $q->where('category', 'avatars')
+        ]);
     }
 
     public function relationSearch(): array
@@ -69,7 +71,9 @@ final class Table extends PowerGridComponent
     {
         return PowerGrid::fields()
             ->add('id')
-            ->add('names')
+            ->add('avatar', fn ($dish) => '<img class="w-10 h-10 shrink-0 grow-0 rounded-full" src="' . verifyMultipleAvatar($dish->file, $dish->names) . '">')
+            ->add('names', fn ($dish) => '<a wire:navigate href="' . route('admin.staff.show', $dish) . '" class="text-link-adp">' . $dish->names . '</a>')
+            ->add('names_export', fn ($dish) => $dish->names)
             ->add('last_names')
             ->add('username')
             ->add('gender', fn ($dish) => getGenderName($dish->gender))
@@ -87,9 +91,16 @@ final class Table extends PowerGridComponent
 
             Column::action('Acciones'),
             Column::make('ID', 'id'),
+
+            Column::make('Avatar', 'avatar')
+                ->visibleInExport(visible: false),
+
             Column::make('Nombres', 'names')
-                ->sortable()
-                ->searchable(),
+                ->visibleInExport(visible: false),
+
+            Column::make('Nombres', 'names_export')
+                ->hidden()
+                ->visibleInExport(visible: true),
 
             Column::make('Apellidos', 'last_names')
                 ->sortable()
@@ -127,7 +138,7 @@ final class Table extends PowerGridComponent
                 ->visibleInExport(visible: true)
                 ->hidden(true),
 
-            Column::make('Email', 'email')
+            Column::make('Correo', 'email')
                 ->sortable()
                 ->searchable()
         ];

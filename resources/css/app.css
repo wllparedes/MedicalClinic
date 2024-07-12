@@ -104,6 +104,12 @@
     );
 }
 
+.text-link-adp {
+    --tw-bg-opacity: 1;
+    color: rgb(3 125 181 / var(--tw-bg-opacity));
+    text-decoration: underline;
+}
+
 @media (max-width: 590px) {
     .container-inputs > .w-64 {
         width: 100% !important;
