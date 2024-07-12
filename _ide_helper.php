@@ -19171,6 +19171,223 @@ namespace Illuminate\Http {
             }
     }
 
+namespace PowerComponents\LivewirePowerGrid {
+            /**
+     * 
+     *
+     */        class Button {
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string $method
+         * @param array $params
+         * @static 
+         */        public static function call($method, $params)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::call($method, $params);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string $event
+         * @param array $params
+         * @static 
+         */        public static function dispatch($event, $params)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::dispatch($event, $params);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string $component
+         * @param string $event
+         * @param array $params
+         * @static 
+         */        public static function dispatchTo($component, $event, $params)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::dispatchTo($component, $event, $params);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string $event
+         * @param array $params
+         * @static 
+         */        public static function dispatchSelf($event, $params)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::dispatchSelf($event, $params);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string $method
+         * @param array $params
+         * @static 
+         */        public static function parent($method, $params)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::parent($method, $params);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string $component
+         * @param array $params
+         * @static 
+         */        public static function openModal($component, $params)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::openModal($component, $params);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @static 
+         */        public static function toggleDetail()
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::toggleDetail();
+        }
+                    /**
+         * 
+         *
+         * @todo 
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @static 
+         */        public static function disable()
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::disable();
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string $value
+         * @static 
+         */        public static function tooltip($value)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::tooltip($value);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string $route
+         * @param array $params
+         * @static 
+         */        public static function route($route, $params)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::route($route, $params);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string $target
+         * @static 
+         */        public static function target($target)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::target($target);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param \Closure $closure
+         * @static 
+         */        public static function render($closure)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::render($closure);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string $method
+         * @static 
+         */        public static function method($method)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::method($method);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string $component
+         * @param array $params
+         * @static 
+         */        public static function bladeComponent($component, $params = [])
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::bladeComponent($component, $params);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string|null $id
+         * @static 
+         */        public static function id($id = null)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::id($id);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param \Closure $closure
+         * @static 
+         */        public static function hideWhen($closure)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::hideWhen($closure);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param \Closure $closure
+         * @static 
+         */        public static function showWhen($closure)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::showWhen($closure);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param \Closure|bool $allowed
+         * @static 
+         */        public static function can($allowed = true)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::can($allowed);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string|null $message
+         * @static 
+         */        public static function confirm($message = null)
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::confirm($message);
+        }
+                    /**
+         * 
+         *
+         * @see \PowerComponents\LivewirePowerGrid\Components\Actions\Macros::boot()
+         * @param string|null $message
+         * @param string $confirmValue
+         * @static 
+         */        public static function confirmPrompt($message = null, $confirmValue = 'Confirm')
+        {
+                        return \PowerComponents\LivewirePowerGrid\Button::confirmPrompt($message, $confirmValue);
+        }
+            }
+    }
+
 namespace Illuminate\Routing {
             /**
      * 
