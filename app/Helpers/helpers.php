@@ -80,16 +80,16 @@ function verifyMultipleAvatar($file, $names)
     if ($file) {
         return $file->file_url;
     }
-    return 'https://ui-avatars.com/api/?name=' . urlencode($names) . '&color=092635&background=D9EAE8';
+    return 'https://ui-avatars.com/api/?name=' . urlencode($names) . '&color=2452d1&background=f4f4f4';
 }
 
 function getRouteDashboard()
 {
     $user = auth()->user();
-    return match ($user->role->name) {
-        'SUPER_ADMIN' => 'super-admin.dashboard',
-        'ADMIN' => 'admin.dashboard',
-        'COLLABORATOR' => 'collaborator.dashboard',
+    return match ($user->role) {
+        'admin' => 'admin.dashboard',
+        'doctor' => 'doctor.dashboard',
+        'receptionist' => 'receptionist.dashboard',
     };
 }
 
