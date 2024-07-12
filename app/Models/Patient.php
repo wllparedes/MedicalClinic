@@ -30,6 +30,11 @@ class Patient extends Model
         'active'
     ];
 
+    public function getUserTypeAttribute()
+    {
+        return 'patient';
+    }
+
     // Relationships
 
     public function medicalHistory(): HasOne

@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -78,6 +80,11 @@ class User extends Authenticatable
         ];
     }
 
+    public function getUserTypeAttribute()
+    {
+        return 'user';
+    }
+
     // Relationships
 
     public function schedules(): HasMany
@@ -103,5 +110,28 @@ class User extends Authenticatable
     public function files(): MorphMany
     {
         return $this->morphMany(File::class, 'fileable');
+    }
+
+    public function avatar()
+    {
+        return $this->load([
+            'file' => fn ($q) => $q->where('category', 'avatars')
+        ]);
+    }
+
+    // Mutators
+
+    protected function names(): Attribute
+    {
+        return new Attribute(
+            set: fn ($value) => ucwords($value)
+        );
+    }
+
+    protected function lastNames(): Attribute
+    {
+        return new Attribute(
+            set: fn ($value) => ucwords($value)
+        );
     }
 }

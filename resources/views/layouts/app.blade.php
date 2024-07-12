@@ -16,6 +16,10 @@
 
         <!-- Styles -->
         @livewireStyles
+
+        <!-- WireUI -->
+        <wireui:scripts />
+
     </head>
     <body class="font-sans antialiased">
         <x-banner />

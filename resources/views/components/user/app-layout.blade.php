@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Clinica') }}</title>
+    <title>Personal - Clinica</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -20,12 +20,30 @@
 
     <!-- WireUI -->
     <wireui:scripts />
+
 </head>
 
-<body>
-    <div class="font-sans text-gray-900 antialiased">
-        {{ $slot }}
+<body class="font-sans antialiased">
+
+    <x-user.sidebar />
+
+    <div class="min-h-screen bg-gray-100">
+
+        <livewire:navigation-menu />
+
+        <!-- Page Content -->
+        <main>
+            <x-dialog />
+
+             <x-notifications />
+
+            {{ $slot }}
+        </main>
     </div>
+
+    <x-footer />
+
+    @stack('modals')
 
     @livewireScripts
 </body>

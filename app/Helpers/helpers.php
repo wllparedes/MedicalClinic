@@ -2,11 +2,10 @@
 
 use Illuminate\Support\Carbon;
 
-
-// function setActive($routeName)
-// {
-//     return request()->routeIs($routeName) ? 'bg-adp-secondary' : '';
-// }
+function setActive($routeName)
+{
+    return request()->routeIs($routeName) ? 'bg-white text-link-active' : '';
+}
 
 // function getRuleUser($role)
 // {
@@ -19,9 +18,46 @@ use Illuminate\Support\Carbon;
 //     return $rules[$role];
 // }
 
+function getGenderChar($gender)
+{
+    return match ($gender) {
+        'hombre' => 'h',
+        'mujer' => 'm',
+        default => 'h'
+    };
+}
+
+function getGenderName($gender)
+{
+    return match ($gender) {
+        'h' => 'Hombre',
+        'm' => 'Mujer',
+        default => 'Hombre'
+    };
+}
+
+function getGenderNameMin($gender)
+{
+    return match ($gender) {
+        'h' => 'hombre',
+        'm' => 'mujer',
+        default => 'hombre'
+    };
+}
+
+function getRoleName($role)
+{
+    return match ($role) {
+        'admin' => 'Administrador',
+        'doctor' => 'Doctor',
+        'receptionist' => 'Recepcionista',
+        default => '-'
+    };
+}
+
 function verifyImage($file)
 {
-    $url = asset('images/latinos/no-image.png');
+    $url = asset('images/clinic/no-image.png');
     if ($file) {
         $url = $file->file_url ?? $url;
     }
@@ -36,7 +72,7 @@ function verifyAvatar($file)
     if ($file) {
         return $file->file_url;
     }
-    return 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&color=092635&background=D9EAE8';
+    return 'https://ui-avatars.com/api/?name=' . urlencode($user->names) . '&color=2452d1&background=f4f4f4';
 }
 
 function verifyMultipleAvatar($file, $names)
