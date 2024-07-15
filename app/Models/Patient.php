@@ -27,7 +27,8 @@ class Patient extends Model
         'email',
         'password',
         'nationality',
-        'active'
+        'active',
+        'status'
     ];
 
     public function getUserTypeAttribute()
