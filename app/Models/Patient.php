@@ -31,6 +31,11 @@ class Patient extends Model
         'status'
     ];
 
+    protected $hidden = [
+        'password',
+        'remember_token'
+    ];
+
     public function getUserTypeAttribute()
     {
         return 'patient';
