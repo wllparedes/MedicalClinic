@@ -65,6 +65,30 @@ function verifyImage($file)
     return $url;
 }
 
+function getBadgeStatusBlade($status)
+{
+    return match ($status) {
+        'approved' => '<x-badge positive label="Aprovado"/>',
+        'pending' => '<x-badge warning label="Pendiente"/>',
+        'rejected' => '<x-badge negative label="Rechazado"/>',
+        default => '<x-badge info label="Desconocido"/>'
+    };
+}
+
+function getRoutePatientShow($dish)
+{
+    $user = auth()->user();
+
+    $route = match ($user->role) {
+        'admin' => 'admin.patients.show',
+        'doctor' => 'doctor.patients.show',
+        'receptionist' => 'receptionist.patients.show',
+    };
+
+    return route($route, $dish);
+}
+
+
 
 function verifyAvatar($file)
 {

@@ -5,8 +5,16 @@
     <div class="h-full px-3 pb-4 overflow-y-auto dark:bg-gray-800">
         <ul class="space-y-2 font-medium">
 
-            <x-sidebar-link route="admin.dashboard" icon="home" label="Home" />
-            <x-sidebar-link route="admin.staff" icon="users" label="Personal" />
+            @can('allowAdmin')
+                <x-sidebar-link route="admin.dashboard" icon="home" label="Home" />
+                <x-sidebar-link route="admin.staff" icon="users" label="Personal" />
+                <x-sidebar-link route="admin.patients" icon="user-group" label="Pacientes" />
+            @endcan
+
+            @can('allowReceptionist')
+                <x-sidebar-link route="receptionist.dashboard" icon="home" label="Home" />
+                <x-sidebar-link route="receptionist.patients" icon="users" label="Pacientes" />
+            @endcan
 
             {{-- * Admin --}}
             {{-- * Doctor --}}

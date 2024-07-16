@@ -38,7 +38,7 @@ final class Table extends PowerGridComponent
         return [
             Exportable::make('export')
                 ->striped()
-                ->type(Exportable::TYPE_XLS, Exportable::TYPE_CSV),
+                ->type(Exportable::TYPE_XLS),
             Header::make()->showSearchInput(),
             Footer::make()
                 ->showPerPage()
@@ -68,7 +68,7 @@ final class Table extends PowerGridComponent
     {
         return PowerGrid::fields()
             ->add('id')
-            ->add('names')
+            ->add('names', fn ($dish) => '<a wire:navigate href="' . getRoutePatientShow($dish) . '" class="text-link-adp">' . $dish->names . '</a>')
             ->add('last_names')
             ->add('username')
             ->add('gender', fn ($dish) => getGenderName($dish->gender))

@@ -14,12 +14,20 @@ return [
         'success_delete' => 'Registro eliminado con éxito!',
         'operation_cancelled' => 'Operación cancelada',
         'updated_record' => 'Registro actualizado con éxito!',
+        'request_sent' => 'Solicitud enviada con éxito!',
+        'request_message' => 'La solicitud ha sido enviada al administrador. Por favor, espera su respuesta.',
+        'client_create' => 'Cliente creado con éxito!',
     ],
 
     'roles' => [
         ['value' => 'admin', 'name' => 'Administrador'],
         ['value' => 'doctor', 'name' => 'Doctor'],
         ['value' => 'receptionist', 'name' => 'Recepcionista'],
+    ],
+
+    'states' => [
+        ['value' => 'approved', 'name' => 'Aprobado'],
+        ['value' => 'rejected', 'name' => 'Rechazado'],
     ],
 
     'provinces' => [

@@ -110,6 +110,10 @@
     text-decoration: underline;
 }
 
+/* .container-register{
+    width: 540px;
+} */
+
 @media (max-width: 590px) {
     .container-inputs > .w-64 {
         width: 100% !important;

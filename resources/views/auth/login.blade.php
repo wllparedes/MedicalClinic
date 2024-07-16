@@ -50,9 +50,17 @@
                         </div>
 
                         <div class="mt-4">
-                            <x-button type="submit" class="w-full" teal label="{{ __('Log in') }}" />
+                            <x-button type="submit" class="w-full" sky label="{{ __('Log in') }}" />
                         </div>
                     </form>
+
+                    <div class="mt-4">
+                        <a wire:navigate
+                            class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+                            href="{{ route('register') }}">
+                            {{ __('Registrarse como paciente?') }}
+                        </a>
+                    </div>
 
                     <div class="mt-7 text-center text-gray-300 text-xs">
                         <span class="text-slate-500">
