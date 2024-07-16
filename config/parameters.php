@@ -17,6 +17,7 @@ return [
         'request_sent' => 'Solicitud enviada con éxito!',
         'request_message' => 'La solicitud ha sido enviada al administrador. Por favor, espera su respuesta.',
         'client_create' => 'Cliente creado con éxito!',
+        'schedule_exists' => 'Este horario ya existe.',
     ],
 
     'roles' => [

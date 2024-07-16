@@ -14,6 +14,7 @@
             @can('allowReceptionist')
                 <x-sidebar-link route="receptionist.dashboard" icon="home" label="Home" />
                 <x-sidebar-link route="receptionist.patients" icon="users" label="Pacientes" />
+                <x-sidebar-link route="receptionist.doctors" icon="user-group" label="Doctores" />
             @endcan
 
             {{-- * Admin --}}

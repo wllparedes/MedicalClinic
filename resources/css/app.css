@@ -104,6 +104,24 @@
     );
 }
 
+.pg-btn-green {
+    background: rgb(104, 205, 93);
+    background: linear-gradient(
+        90deg,
+        rgba(104, 205, 93, 1) 0%,
+        rgba(38, 216, 38, 1) 100%
+    );
+}
+
+.pg-btn-green:hover {
+    background: rgb(38, 216, 38);
+    background: linear-gradient(
+        90deg,
+        rgba(38, 216, 38, 1) 0%,
+        rgba(104, 205, 93, 1) 100%
+    );
+}
+
 .text-link-adp {
     --tw-bg-opacity: 1;
     color: rgb(3 125 181 / var(--tw-bg-opacity));

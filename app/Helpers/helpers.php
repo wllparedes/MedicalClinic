@@ -117,6 +117,16 @@ function getRouteDashboard()
     };
 }
 
+function formatTimeHs($time)
+{
+    return Carbon::parse($time)->format('H:i');
+}
+
+function getLabelScheduleHour($schedule)
+{
+    return formatTimeHs($schedule->start)  . " a " . formatTimeHs($schedule->end);
+}
+
 
 // CARBON
 

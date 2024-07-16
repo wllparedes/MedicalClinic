@@ -56,5 +56,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::get('/patients/{patient:slug}', function (Patient $patient) {
             return view('receptionist.patients.show', compact('patient'));
         })->name('patients.show');
+
+        Route::get('/doctors', function () {
+            return view('receptionist.doctors.index');
+        })->name('doctors');
     });
 });

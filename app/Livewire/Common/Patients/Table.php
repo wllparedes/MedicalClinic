@@ -25,6 +25,10 @@ final class Table extends PowerGridComponent
     use WithExport;
     use WireUiActions;
 
+    public bool $deferLoading = true;
+
+    public string $loadingComponent = 'components.loading-table';
+
     #[On('table:refresh')]
     public function refreshTable(): void
     {
