@@ -17,4 +17,15 @@ class File extends Model
         'fileable_id',
         'fileable_type',
     ];
+
+    public function fileable()
+    {
+        return $this->morphTo();
+    }
+
+    public function getNameAttribute()
+    {
+        return basename($this->file_path);
+    }
+
 }

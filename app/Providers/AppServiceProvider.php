@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Patient;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Gate::define('allowAdmin', function ($user) {
+            return $user->role === 'admin';
+        });
+
+        Gate::define('allowReceptionist', function ($user) {
+            return $user->role === 'receptionist';
+        });
+
+        Gate::define('allowPatientPending', function ($user, Patient $patient) {
+            return $patient->status === 'pending';
+        });
     }
 }

@@ -1,7 +1,139 @@
+@import url("variables.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 [x-cloak] {
     display: none;
+}
+
+#container-background {
+    background-image: url("../images/clinic/hospital.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* filter: blur(1rem); */
+}
+
+.bg-adp {
+    background-color: var(--color-primary);
+}
+
+.link-sidebar {
+    transition: background-color 0.3s ease-in;
+}
+
+.link-sidebar:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(3 125 181 / var(--tw-bg-opacity));
+    color: white !important;
+}
+
+.text-link-active {
+    --tw-bg-opacity: 1;
+    color: rgb(3 125 181 / var(--tw-bg-opacity));
+}
+
+.pg-btn {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(226 232 240 / var(--tw-ring-opacity));
+    align-items: center;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    -moz-column-gap: 0.5rem;
+    column-gap: 0.5rem;
+    display: inline-flex;
+    font-size: 0.875rem;
+    justify-content: start;
+    line-height: 1.25rem;
+    border: none;
+    /* outline-offset: 2px; */
+    padding: 0.5rem 0.75rem;
+    color: #fff;
+}
+
+.pg-actions {
+    justify-content: start;
+}
+
+.pg-btn:hover {
+    cursor: pointer;
+    --tw-bg-opacity: 1;
+    --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.pg-btn-yellow {
+    background: rgb(211, 216, 38);
+    background: linear-gradient(
+        90deg,
+        rgba(211, 216, 38, 1) 0%,
+        rgba(204, 205, 93, 1) 100%
+    );
+}
+
+.pg-btn-yellow:hover {
+    background: rgb(204, 205, 93);
+    background: linear-gradient(
+        90deg,
+        rgba(204, 205, 93, 1) 0%,
+        rgba(211, 216, 38, 1) 100%
+    );
+}
+
+.pg-btn-red {
+    /* background-color: #ef4444; */
+    background: rgb(205, 68, 96);
+    background: linear-gradient(
+        90deg,
+        rgba(205, 68, 96, 1) 0%,
+        rgba(203, 55, 70, 1) 100%
+    );
+}
+
+.pg-btn-red:hover {
+    /* background-color: #dc2626; */
+    background: rgb(203, 55, 70);
+    background: linear-gradient(
+        90deg,
+        rgba(203, 55, 70, 1) 0%,
+        rgba(205, 68, 96, 1) 100%
+    );
+}
+
+.pg-btn-green {
+    background: rgb(104, 205, 93);
+    background: linear-gradient(
+        90deg,
+        rgba(104, 205, 93, 1) 0%,
+        rgba(38, 216, 38, 1) 100%
+    );
+}
+
+.pg-btn-green:hover {
+    background: rgb(38, 216, 38);
+    background: linear-gradient(
+        90deg,
+        rgba(38, 216, 38, 1) 0%,
+        rgba(104, 205, 93, 1) 100%
+    );
+}
+
+.text-link-adp {
+    --tw-bg-opacity: 1;
+    color: rgb(3 125 181 / var(--tw-bg-opacity));
+    text-decoration: underline;
+}
+
+/* .container-register{
+    width: 540px;
+} */
+
+@media (max-width: 590px) {
+    .container-inputs > .w-64 {
+        width: 100% !important;
+    }
 }

@@ -1,48 +1,79 @@
 <x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
-
-        <x-validation-errors class="mb-4" />
-
-        @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
+    <div class="absolute top-0 left-0 bottom-0 leading-5 h-full w-full overflow-hidden" id="container-background">
+    </div>
+    <div class="relative min-h-screen sm:flex sm:flex-row justify-center bg-transparent rounded-3xl flex">
+        {{-- <div class="flex-col flex  self-center lg:px-14 sm:max-w-4xl xl:max-w-md  z-10">
+            <div class="self-start hidden lg:flex flex-col  text-gray-300">
+                <h1 class="my-3 font-semibold text-4xl">Bienvenido a Clinica Médica</h1>
+                <p class="pr-3 text-sm opacity-75">
+                    Sistema de gestión de pacientes y citas médicas.
+                </p>
             </div>
-        @endsession
+        </div> --}}
+        <div class="flex justify-center self-center z-10">
+            <div id="container-login" class="p-4 mx-auto w-96 m-5 bg-slate-300">
+                <div class="sub-container bg-white mx-auto w-100 p-8">
+                    <div class="mb-7">
+                        <h3 class="font-semibold text-2xl text-gray-800 text-center">Clinica ADP</h3>
+                    </div>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+                    <form method="POST" action="{{ route('login') }}" class="space-y-6">
+                        @csrf
 
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                        <x-input icon="user" label="{{ __('Username') }}" id="username" name="username"
+                            placeholder="Ingrese su nombre de usuario" :value="old('username')" />
+
+                        <div class="mt-4">
+                            <x-password label="{{ __('Password') }}" id="password" name="password"
+                                placeholder="Ingrese su contraseña" autocomplete="current-password" />
+                        </div>
+
+                        <div class="mt-4">
+                            <div class="flex justify-between items-end mb-1">
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-400">
+                                    Ingresar como
+                                </label>
+                            </div>
+                            <div class="flex gap-3 items-center">
+                                <x-radio id="role" name="role" left-label="Personal" wire:model="model1"
+                                    value="staff" :checked="old('role') === 'staff'" checked />
+                                <x-radio id="role" name="role" label="Paciente" wire:model="model1"
+                                    value="patient" :checked="old('role') === 'patient'" />
+                            </div>
+                        </div>
+
+                        <div class="block mt-4">
+                            <label for="remember_me" class="flex items-center">
+                                <x-checkbox id="remember_me" name="remember" />
+                                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                            </label>
+                        </div>
+
+                        <div class="mt-4">
+                            <x-button type="submit" class="w-full" sky label="{{ __('Log in') }}" />
+                        </div>
+                    </form>
+
+                    <div class="mt-4">
+                        <a wire:navigate
+                            class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+                            href="{{ route('register') }}">
+                            {{ __('Registrarse como paciente?') }}
+                        </a>
+                    </div>
+
+                    <div class="mt-7 text-center text-gray-300 text-xs">
+                        <span class="text-slate-500">
+                            Copyright &copy; {{ getCurrentYear() }}
+                            <a href="{{ route('login') }}" rel="" target="_blank" title="Codepen aji"
+                                class="text-teal-500 hover:text-teal-600">
+                                Clinica Médica
+                            </a>
+                        </span>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
 
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ms-4">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
 </x-guest-layout>
