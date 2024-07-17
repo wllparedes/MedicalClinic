@@ -53,7 +53,8 @@ final class Table extends PowerGridComponent
     {
         return PowerGrid::fields()
             ->add('id')
-            ->add('names')
+            ->add('names', fn ($dish) => '<a wire:navigate href="' . route('receptionist.doctors.show', ['doctor' => $dish]) . '" class="text-link-adp">' . $dish->names . '</a>')
+            ->add('names_export', fn ($dish) => $dish->names)
             ->add('last_names')
             ->add('gender', fn ($dish) => getGenderName($dish))
             ->add('dni')
@@ -68,9 +69,13 @@ final class Table extends PowerGridComponent
             Column::action('Acciones'),
 
             Column::make('ID', 'id'),
+
             Column::make('Nombres', 'names')
-                ->sortable()
-                ->searchable(),
+                ->visibleInExport(visible: false),
+
+            Column::make('Nombres', 'names_export')
+                ->visibleInExport(visible: true)
+                ->hidden(),
 
             Column::make('Apellidos', 'last_names')
                 ->sortable()
