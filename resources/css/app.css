@@ -35,6 +35,10 @@
     color: rgb(3 125 181 / var(--tw-bg-opacity));
 }
 
+.text-primary {
+    color: var(--color-primary);
+}
+
 .pg-btn {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(226 232 240 / var(--tw-ring-opacity));

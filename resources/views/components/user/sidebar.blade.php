@@ -9,6 +9,7 @@
                 <x-sidebar-link route="admin.dashboard" icon="home" label="Home" />
                 <x-sidebar-link route="admin.staff" icon="users" label="Personal" />
                 <x-sidebar-link route="admin.patients" icon="user-group" label="Pacientes" />
+                <x-sidebar-link route="admin.categories" icon="bookmark" label="Categorias" />
             @endcan
 
             @can('allowReceptionist')
@@ -16,10 +17,6 @@
                 <x-sidebar-link route="receptionist.patients" icon="users" label="Pacientes" />
                 <x-sidebar-link route="receptionist.doctors" icon="user-group" label="Doctores" />
             @endcan
-
-            {{-- * Admin --}}
-            {{-- * Doctor --}}
-            {{-- * Receptionist --}}
 
         </ul>
     </div>
