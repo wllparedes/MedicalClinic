@@ -18,7 +18,7 @@
 
         <br>
 
-        <x-dropdown-card title="Sub categorías">
+        <x-dropdown-card title="Sub categorías" open="false">
 
             <livewire:admin.subcategories.create-modal lazy />
 

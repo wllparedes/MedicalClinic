@@ -1,4 +1,4 @@
-<section id="dropdown_card" class="w-full border border-slate-300 rounded-md p-2" x-data="{ open: true }">
+<section id="dropdown_card" class="w-full border border-slate-300 rounded-md p-2" x-data="{ open: {{ $open }} }">
 
     <div class="dropdown_card flex justify-between items-center h-8">
         <span class="text-primary font-semibold text-lg">
@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <div class="dropdown_card" x-show="open" x-transition:enter="transition ease-out duration-300"
+    <div class="dropdown_card" x-show="open" x-cloak x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 transform scale-90" x-transition:enter-end="opacity-100 transform scale-100"
         x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform scale-100"
         x-transition:leave-end="opacity-0 transform scale-90">

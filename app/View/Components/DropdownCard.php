@@ -10,12 +10,14 @@ class DropdownCard extends Component
 {
 
     public $title;
+    public $open;
     /**
      * Create a new component instance.
      */
-    public function __construct($title)
+    public function __construct($title, $open = true)
     {
         $this->title = $title;
+        $this->open = $open;
     }
 
     /**
