@@ -43,6 +43,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::get('/categories', function () {
             return view('admin.categories.index');
         })->name('categories');
+
+        Route::get('/products', function () {
+            return view('admin.products.index');
+        })->name('products');
     });
 
     Route::middleware(['check.role:receptionist'])->prefix('receptionist')->name('receptionist.')->group(function () {
@@ -68,5 +72,19 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::get('/doctors/{doctor:slug}', function (User $doctor) {
             return view('receptionist.doctors.show', compact('doctor'));
         })->name('doctors.show');
+    });
+
+
+    // PATIENTS
+
+    Route::prefix('patient')->name('patient.')->group(function () {
+
+        Route::get('/dashboard', function () {
+            return view('patient.dashboard.index');
+        })->name('dashboard');
+
+        Route::get('/appointments', function () {
+            return view('patient.appointments.index');
+        })->name('appointments');
     });
 });

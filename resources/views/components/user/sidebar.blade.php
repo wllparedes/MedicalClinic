@@ -10,6 +10,7 @@
                 <x-sidebar-link route="admin.staff" icon="users" label="Personal" />
                 <x-sidebar-link route="admin.patients" icon="user-group" label="Pacientes" />
                 <x-sidebar-link route="admin.categories" icon="bookmark" label="Categorias" />
+                <x-sidebar-link route="admin.products" icon="beaker" label="Productos" />
             @endcan
 
             @can('allowReceptionist')

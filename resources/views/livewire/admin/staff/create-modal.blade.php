@@ -84,7 +84,7 @@
                             <div class="flex flex-col items-center justify-center w-full">
 
                                 @if (!$createForm->image)
-                                    <x-icon name="arrow-up-tray" class="w-16 h-16 text-blue-600" />
+                                    <x-icon name="cloud-arrow-up" class="w-16 h-16 text-blue-600" />
                                     <p class="text-blue-600 text-sm">Click o deja caer la imagen de perfil</p>
                                     <p class="text-blue-900 text-xs">(opcional)</p>
                                 @else

@@ -20,6 +20,7 @@ return [
         'schedule_exists' => 'Este horario ya existe.',
         'category_create' => 'Categoría creada con éxito!',
         'name_required' => 'El campo nombre es requerido.',
+        'product_create' => 'Producto creado con éxito!',
     ],
 
     'roles' => [

@@ -1,3 +1,4 @@
+@import "@dasundev/livewire-dropzone-styles";
 @import url("variables.css");
 
 @tailwind base;

@@ -17,4 +17,15 @@ Route::prefix('api')->name('api.')->group(function () {
                 ->get();
         }
     })->name('categories.all');
+
+
+    Route::get('/subcategories/{category}', function (Request $request, Category $category) {
+
+        if ($request->ajax()) {
+            return $category->subCategories()->when($request->search, function ($query, $search) {
+                $query->where('name', 'like', '%' . $search . '%');
+            })
+                ->get();
+        }
+    })->name('categories.getSubcategories');
 });
