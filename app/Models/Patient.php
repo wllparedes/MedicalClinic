@@ -8,11 +8,21 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Fortify\TwoFactorAuthenticatable;
+use Laravel\Jetstream\HasProfilePhoto;
+use Laravel\Sanctum\HasApiTokens;
 use Livewire\Features\SupportAttributes\Attribute;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Patient extends Model
+class Patient extends Authenticatable
 {
+    use HasApiTokens;
     use HasFactory;
+    use Notifiable;     
+    use HasProfilePhoto;
+    use TwoFactorAuthenticatable;
+
 
     protected $fillable = [
         'names',
@@ -38,6 +48,13 @@ class Patient extends Model
         'password',
         'remember_token'
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'password' => 'hashed',
+        ];
+    }
 
     // Properties
 

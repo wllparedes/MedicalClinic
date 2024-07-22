@@ -75,7 +75,7 @@ final class Table extends PowerGridComponent
     {
         return PowerGrid::fields()
             ->add('id')
-            ->add('image', fn ($dish) => '<img class="w-16 h-16 shrink-0 grow-0 rounded-full" src="' . verifyImage($dish->file) . '">')
+            ->add('image', fn ($dish) => '<img class="w-16 h-16 shrink-0 grow-0 rounded-full border border-slate-200 shadow-lg" src="' . verifyImage($dish->file) . '">')
             ->add('name')
             ->add('slug')
             ->add('category', fn ($dish) => $dish->category->name)

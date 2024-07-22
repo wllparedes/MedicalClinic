@@ -75,7 +75,7 @@ final class Table extends PowerGridComponent
     {
         return PowerGrid::fields()
             ->add('id')
-            ->add('avatar', fn ($dish) => '<img class="w-10 h-10 shrink-0 grow-0 rounded-full" src="' . verifyMultipleAvatar($dish->file, $dish->names) . '">')
+            ->add('avatar', fn ($dish) => '<img class="w-16 h-16 shrink-0 grow-0 rounded-full border border-slate-200 shadow-lg" src="' . verifyMultipleAvatar($dish->file, $dish->names) . '">')
             ->add('names', fn ($dish) => '<a wire:navigate href="' . route('admin.staff.show', $dish) . '" class="text-link-adp">' . $dish->names . '</a>')
             ->add('names_export', fn ($dish) => $dish->names)
             ->add('last_names')

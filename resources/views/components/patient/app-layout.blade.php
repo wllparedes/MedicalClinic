@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Personal - Clinica</title>
+    <title>Paciente - Clinica</title>
 
     <!-- Fonts -->
     {{-- <link rel="preconnect" href="https://fonts.bunny.net">
@@ -21,6 +21,7 @@
     <!-- WireUI -->
     <wireui:scripts />
 
+    @stack('css')
 </head>
 
 <body class="font-sans antialiased bg-gray-50">
@@ -29,9 +30,10 @@
 
     <x-notifications />
 
-    <x-user.sidebar />
+    <x-patient.sidebar />
 
     <livewire:navigation-menu />
+
 
     <!-- Page Content -->
     <main class="main-content bg-gray-50" x-data="{ isNarrow: window.innerWidth <= 640, resize: $persist(false) }" x-on:sidebar-function.window="resize = !resize"
@@ -42,6 +44,7 @@
             'pl-[5px] pr-[5px]': isNarrow,
             'pr-[30px]': !isNarrow
         }">
+
         {{ $slot }}
     </main>
 
@@ -50,6 +53,9 @@
     @stack('modals')
 
     @livewireScripts
+
+    @stack('js')
+
 </body>
 
 </html>

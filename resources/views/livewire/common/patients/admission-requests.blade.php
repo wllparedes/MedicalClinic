@@ -8,7 +8,7 @@
                         :options="$state" wire:model="status" />
                 </div>
                 <div class="flex justify-end">
-                    <x-button icon="check" positive label="Confirmar" type="submit" wire:target='admission' />
+                    <x-button icon="check" teal label="Confirmar" type="submit" wire:target='admission' />
                 </div>
             </div>
 

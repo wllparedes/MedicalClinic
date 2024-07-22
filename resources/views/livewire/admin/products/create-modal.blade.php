@@ -1,5 +1,5 @@
 <div class="mb-3">
-    <x-button icon="beaker" sky label="Crear nuevo producto" onclick="$openModal('openCreate')" />
+    <x-button icon="beaker" cyan label="Crear nuevo producto" onclick="$openModal('openCreate')" />
 
     <x-modal-card blur="lg" title="Crear nuevo producto" wire:model="openCreate" width="md">
 
@@ -90,7 +90,7 @@
             <div class="flex justify-end gap-x-4">
                 <div class="flex gap-4">
                     <x-button flat secondary label="{{ __('Cancel') }}" x-on:click="close" />
-                    <x-mini-button rounded wire:click="save" sky icon="check" spinner="save" />
+                    <x-mini-button rounded wire:click="save" cyan icon="check" spinner="save" />
                 </div>
             </div>
         </x-slot>

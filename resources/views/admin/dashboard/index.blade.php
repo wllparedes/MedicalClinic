@@ -1,8 +1,8 @@
 <x-user.app-layout>
 
-    <x-navigation>
+    {{-- <x-navigation>
         <x-nav-tab route="login" label="Inicio" icon="home" />
-    </x-navigation>
+    </x-navigation> --}}
 
     <x-section-content>
 

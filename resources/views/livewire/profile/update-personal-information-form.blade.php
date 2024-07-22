@@ -34,7 +34,7 @@
             {{ __('Saved.') }}
         </x-action-message>
 
-        <x-button wire:loading.attr="disabled" wire:target="photo" sky type="submit">
+        <x-button wire:loading.attr="disabled" wire:target="photo" cyan type="submit">
             {{ __('Save') }}
         </x-button>
     </x-slot>

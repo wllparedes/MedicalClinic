@@ -1,4 +1,4 @@
-<x-user.app-layout>
+<x-patient.app-layout>
 
     {{-- <x-navigation>
         <x-nav-tab route="login" label="Inicio" icon="home" />
@@ -6,7 +6,7 @@
 
     <x-section-content>
 
-        <h3>RECEPTIONIST</h3>
+        <h3>Paciente</h3>
 
         {{-- <livewire:create-holiday-modal lazy />
 
@@ -16,4 +16,4 @@
 
     </x-section-content>
 
-</x-user.app-layout>
+</x-patient.app-layout>

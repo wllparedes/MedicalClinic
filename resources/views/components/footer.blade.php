@@ -1,4 +1,4 @@
-<footer class="p-4 sm:ml-64 bg-gray-100 border-slate-200 border-t-2">
+<footer class="bg-gray-50 border-slate-200 border-t-2">
     <div class="w-full mx-auto max-w-screen-xl flex justify-center">
         <span class="text-xs text-slate-600 sm:text-center text-start">
             &copy; {{ $year }}

@@ -4,7 +4,7 @@ use Illuminate\Support\Carbon;
 
 function setActive($routeName)
 {
-    return request()->routeIs($routeName) ? 'bg-white text-link-active' : '';
+    return request()->routeIs($routeName) ? 'bg-white text-link-active shadow-lg' : '';
 }
 
 // function getRuleUser($role)
@@ -96,7 +96,7 @@ function verifyAvatar($file)
     if ($file) {
         return $file->file_url;
     }
-    return 'https://ui-avatars.com/api/?name=' . urlencode($user->names) . '&color=2452d1&background=f4f4f4';
+    return 'https://ui-avatars.com/api/?name=' . urlencode($user->names) . '&color=0284c7&background=ffffff';
 }
 
 function verifyMultipleAvatar($file, $names)
@@ -104,7 +104,7 @@ function verifyMultipleAvatar($file, $names)
     if ($file) {
         return $file->file_url;
     }
-    return 'https://ui-avatars.com/api/?name=' . urlencode($names) . '&color=2452d1&background=f4f4f4';
+    return 'https://ui-avatars.com/api/?name=' . urlencode($names) . '&color=0284c7&background=ffffff';
 }
 
 function getRouteDashboard()

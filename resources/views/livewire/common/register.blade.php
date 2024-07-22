@@ -77,7 +77,7 @@
             {{ __('Already registered?') }}
         </a>
 
-        <x-button type="submit" sky class="ms-4">
+        <x-button type="submit" cyan class="ms-4">
             Solicitar registro
         </x-button>
     </div>

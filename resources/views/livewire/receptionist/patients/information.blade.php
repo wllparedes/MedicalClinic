@@ -20,7 +20,7 @@
         </span>
 
         <div class="w-full flex justify-center sm:justify-start sm:w-auto">
-            <img class="object-cover w-20 h-20 mt-3 mr-3 rounded-full"
+            <img class="object-cover w-20 h-20 mt-3 mr-3 rounded-full border border-slate-200 shadow-lg"
                 src="{{ verifyMultipleAvatar($patient->file, $patient->names) }}">
         </div>
 
