@@ -12,17 +12,18 @@
         </div>
 
         <div class="col-span-1 sm:col-span-2">
-            <x-select label="Categoria" placeholder="Seleccione una categoria" right-icon="bookmark"
-                wire:model.live='editForm.category_id' :async-data="route('api.categories.all')" option-label="name" option-value="id" />
+            <x-select label="Categoria" placeholder="Seleccione una categoria" right-icon="bookmark" clearable="0"
+                option-value="id" option-label="name" wire:model.live='editForm.category_id' :options="$categories" />
         </div>
 
         <div class="col-span-1 sm:col-span-2">
             @unless ($editForm->category_id)
                 <x-select label="Subcategorias" placeholder="Seleccione las subcategorias" clearable="0"
-                    right-icon="bookmark" wire:model.live='editForm.subcategories_id' disabled multiselect />
+                    right-icon="bookmark" wire:model.live='editForm.subcategories_id' disabled multiselect :options="$subcategories"
+                    option-value="id" option-label="name" />
             @else
                 <x-select label="Subcategorias" placeholder="Seleccione las subcategorias" clearable="0"
-                    right-icon="bookmark" wire:model.live='editForm.subcategories_id' :async-data="route('api.categories.getSubcategories', ['category' => $editForm->category_id])" option-label="name"
+                    right-icon="bookmark" wire:model.live='editForm.subcategories_id' :options="$subcategories" option-label="name"
                     option-value="id" multiselect />
             @endunless
         </div>
@@ -89,7 +90,7 @@
         <div class="flex justify-end gap-x-4">
             <div class="flex gap-4">
                 <x-button flat secondary label="{{ __('Cancel') }}" x-on:click="close" />
-                <x-mini-button rounded wire:click="save" cyan icon="check" spinner="save" />
+                <x-mini-button rounded wire:click="update" cyan icon="check" spinner="update" />
             </div>
         </div>
     </x-slot>

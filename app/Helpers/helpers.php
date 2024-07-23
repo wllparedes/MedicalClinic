@@ -127,6 +127,18 @@ function getLabelScheduleHour($schedule)
     return formatTimeHs($schedule->start)  . " a " . formatTimeHs($schedule->end);
 }
 
+function getDescription($description)
+{
+    if ($description) {
+        if (mb_strlen($description) > 17) {
+            return mb_substr($description, 0, 17) . '...';
+        } else {
+            return $description;
+        }
+    } else {
+        return NULL;
+    }
+}
 
 // CARBON
 

@@ -12,7 +12,7 @@ class CreateForm extends Form
 {
     #[Validate('required')]
     public $name;
-    #[Validate('required|max:255')]
+    #[Validate('max:255')]
     public $description;
     #[Validate('required|numeric|exists:categories,id')]
     public $category_id;
@@ -37,7 +37,7 @@ class CreateForm extends Form
         $product = Product::create([
             'name' => $this->name,
             'slug' => Str::slug($this->name),
-            'description' => $this->description,
+            'description' => $this->description ?? NULL,
             'category_id' => $this->category_id,
         ]);
 
