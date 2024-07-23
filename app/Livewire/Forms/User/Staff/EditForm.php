@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Forms\User\Staff;
 
+use App\Models\File;
 use App\Services\FileService;
 use Hash;
 use Illuminate\Validation\Rule;
@@ -49,6 +50,11 @@ class EditForm extends Form
         ];
     }
 
+    /**
+     * Summary of updateImage
+     * @param File $image Image to delete
+     * @return void
+     */
     public function updateImage($image)
     {
         $fileService = new FileService();

@@ -12,7 +12,9 @@ class DropdownCard extends Component
     public $title;
     public $open;
     /**
-     * Create a new component instance.
+     * Summary of __construct
+     * @param string $title - Dropdown card title
+     * @param bool $open - Attribute to initialize the dropdown open or not
      */
     public function __construct($title, $open = true)
     {

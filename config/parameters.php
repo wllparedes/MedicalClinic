@@ -6,6 +6,7 @@ return [
     'messages' => [
         'not_active' => 'Tu cuenta ha sido deshabilitada. Contáctate con un administrador.',
         'user_create' => 'Cliente creado con éxito!',
+        'staff_create' => 'Personal creado con éxito!',
         'are_you_sure_?' => '¿Estás seguro?',
         'delete_record_?' => '¿Eliminar este registro?',
         'yes_deleted' => 'Sí, eliminarlo',

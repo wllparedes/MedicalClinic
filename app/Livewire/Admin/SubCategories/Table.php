@@ -122,6 +122,7 @@ final class Table extends PowerGridComponent
     public function confirmDelete(SubCategory $subcategory)
     {
         if ($subcategory) {
+            $subcategory->products()->detach();
             $subcategory->delete();
             $this->dialog()->success(config('parameters.messages.success_delete'));
             $this->dispatch('table-category:refresh');
