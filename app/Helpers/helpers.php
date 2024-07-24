@@ -18,6 +18,30 @@ function setActive($routeName)
 //     return $rules[$role];
 // }
 
+function getDayNameSpanish($dayName)
+{
+    return match ($dayName) {
+        'Monday' => 'Lunes',
+        'Tuesday' => 'Martes',
+        'Wednesday' => 'Miércoles',
+        'Thursday' => 'Jueves',
+        'Friday' => 'Viernes',
+        'Saturday' => 'Sábado',
+        'Sunday' => 'Domingo',
+        default => 'Not found'
+    };
+}
+
+function getTypeAppointments($type)
+{
+    return match ($type) {
+        'normal' => 'Normal',
+        'virtual' => 'Virtual',
+        default => 'Not found'
+    };
+}
+
+
 function getGenderChar($gender)
 {
     return match ($gender) {
