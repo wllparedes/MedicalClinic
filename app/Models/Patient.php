@@ -12,14 +12,14 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use Livewire\Features\SupportAttributes\Attribute;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Patient extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
-    use Notifiable;     
+    use Notifiable;
     use HasProfilePhoto;
     use TwoFactorAuthenticatable;
 

@@ -1,5 +1,5 @@
 <div class="mb-3">
-    <x-button icon="beaker" cyan label="Solicitar cita médica" onclick="$openModal('openRequest')" />
+    <x-button icon="calendar" cyan label="Solicitar cita médica" onclick="$openModal('openRequest')" />
 
     <x-modal-card blur="lg" title="Solicitar cita médica" wire:model="openRequest" width="md">
 

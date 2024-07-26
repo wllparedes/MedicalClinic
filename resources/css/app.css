@@ -141,6 +141,24 @@ body {
     );
 }
 
+.pg-btn-blue {
+    background: rgb(68, 107, 205);
+    background: linear-gradient(
+        90deg,
+        rgba(68, 107, 205, 1) 0%,
+        rgba(55, 89, 203, 1) 100%
+    );
+}
+
+.pg-btn-blue:hover {
+    background: rgb(55, 89, 203);
+    background: linear-gradient(
+        90deg,
+        rgba(55, 89, 203, 1) 0%,
+        rgba(68, 107, 205, 1) 100%
+    );
+}
+
 .text-link-adp {
     --tw-bg-opacity: 1;
     color: rgb(3 125 181 / var(--tw-bg-opacity));

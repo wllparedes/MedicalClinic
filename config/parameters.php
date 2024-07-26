@@ -23,6 +23,7 @@ return [
         'name_required' => 'El campo nombre es requerido.',
         'product_create' => 'Producto creado con éxito!',
         'appointment_request' => 'Cita médica solicitada con éxito!',
+        'appointment_response' => 'Cita médica evaluada con éxito!'
     ],
 
     'roles' => [
@@ -32,8 +33,8 @@ return [
     ],
 
     'states' => [
-        ['value' => 'approved', 'name' => 'Aprobado'],
-        ['value' => 'rejected', 'name' => 'Rechazado'],
+        ['value' => 'approved', 'name' => 'Aprobar'],
+        ['value' => 'rejected', 'name' => 'Rechazar'],
     ],
 
     'provinces' => [

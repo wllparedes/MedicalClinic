@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Models\Appointment;
 use App\Models\Patient;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -72,6 +73,14 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::get('/doctors/{doctor:slug}', function (User $doctor) {
             return view('receptionist.doctors.show', compact('doctor'));
         })->name('doctors.show');
+
+        Route::get('/appointments', function () {
+            return view('receptionist.appointments.index');
+        })->name('appointments');
+
+        Route::get('/appointments/{appointment}', function (Appointment $appointment) {
+            return view('receptionist.appointments.show', compact('appointment'));
+        })->name('appointments.show');
     });
 
 

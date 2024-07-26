@@ -50,7 +50,8 @@
                         </div>
 
                         <div class="mt-4">
-                            <x-button type="submit" class="w-full" cyan label="{{ __('Log in') }}" />
+                            <x-button type="submit" class="w-full" wire-load-enabled="1" cyan
+                                label="{{ __('Log in') }}" />
                         </div>
                     </form>
 

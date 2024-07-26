@@ -95,6 +95,7 @@ function getBadgeStatusBlade($status)
         'approved' => '<x-badge positive label="Aprovado"/>',
         'pending' => '<x-badge warning label="Pendiente"/>',
         'rejected' => '<x-badge negative label="Rechazado"/>',
+        'cancelled' => '<x-badge amber label="Cancelado"/>',
         default => '<x-badge info label="Desconocido"/>'
     };
 }
@@ -151,11 +152,11 @@ function getLabelScheduleHour($schedule)
     return formatTimeHs($schedule->start)  . " a " . formatTimeHs($schedule->end);
 }
 
-function getDescription($description)
+function getDescription($description, $length = 17)
 {
     if ($description) {
-        if (mb_strlen($description) > 17) {
-            return mb_substr($description, 0, 17) . '...';
+        if (mb_strlen($description) > $length) {
+            return mb_substr($description, 0, $length) . '...';
         } else {
             return $description;
         }
