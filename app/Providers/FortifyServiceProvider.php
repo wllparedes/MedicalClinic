@@ -81,18 +81,20 @@ class FortifyServiceProvider extends ServiceProvider
                 {
                     $type = Auth::user()->user_type;
 
-                    if ($type == 'user') {
+                    switch ($type) {
+                        case 'user':
+                            $role = Auth::user()->role;
 
-                        $role = Auth::user()->role;
-
-                        $home = match ($role) {
-                            'admin' => 'admin.dashboard',
-                            'doctor' => 'doctor.dashboard',
-                            'receptionist' => 'receptionist.dashboard',
-                            default => route('welcome'),
-                        };
-                    } elseif ($type == 'patient') {
-                        $home = 'patient.dashboard';
+                            $home = match ($role) {
+                                'admin' => 'admin.dashboard',
+                                'doctor' => 'doctor.dashboard',
+                                'receptionist' => 'receptionist.dashboard',
+                                default => route('welcome'),
+                            };
+                            break;
+                        case 'patient':
+                            $home = 'patient.dashboard';
+                            break;
                     }
 
                     return $request->wantsJson()

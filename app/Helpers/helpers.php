@@ -152,17 +152,24 @@ function getLabelScheduleHour($schedule)
     return formatTimeHs($schedule->start)  . " a " . formatTimeHs($schedule->end);
 }
 
-function getDescription($description, $length = 17)
+function getDescription($description, $length = 18)
 {
     if ($description) {
-        if (mb_strlen($description) > $length) {
-            return mb_substr($description, 0, $length) . '...';
-        } else {
-            return $description;
-        }
+        return Str::limit($description, $length);
     } else {
-        return NULL;
+        return '-';
     }
+}
+
+function getLink($link, $length = 20)
+{
+    return $link
+        ? "<a target='_BLANK' href='" .
+        $link .
+        "' class='text-link-adp'>" .
+        getDescription($link, $length) .
+        '</a>'
+        : 'Sin enlace.';
 }
 
 // CARBON

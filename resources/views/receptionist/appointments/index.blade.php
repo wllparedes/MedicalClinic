@@ -7,7 +7,7 @@
 
     <x-section-content>
 
-        <livewire:receptionist.appointments.table />
+        <livewire:receptionist.appointments.record />
 
     </x-section-content>
 

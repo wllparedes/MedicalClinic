@@ -80,7 +80,7 @@ final class Table extends PowerGridComponent
             ->add('slug')
             ->add('category', fn ($dish) => $dish->category->name)
             ->add('subCategories', fn ($dish) => Blade::render('<x-list-subcategories :subcategories="$subcategories" />', ['subcategories' => $dish->subCategories]))
-            ->add('description', fn ($dish) => getDescription($dish->description) ?? '-')
+            ->add('description', fn ($dish) => getDescription($dish->description))
             ->add('active');
     }
 

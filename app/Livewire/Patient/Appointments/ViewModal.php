@@ -15,6 +15,7 @@ class ViewModal extends Component
     #[On('modal-information:show')]
     public function openModal(Appointment $appointment)
     {
+        $appointment->load('doctor');
         $this->appointment = $appointment;
         $this->openView = true;
     }

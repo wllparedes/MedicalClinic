@@ -83,11 +83,28 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         })->name('appointments.show');
     });
 
+    Route::middleware(['check.role:doctor'])->prefix('doctor')->name('doctor.')->group(function () {
+
+        Route::get('dashboard', function () {
+            return view('doctor.dashboard.index');
+        })->name('dashboard');
+
+        Route::get('appointments', function () {
+            return view('doctor.appointments.index');
+        })->name('appointments');
+
+        Route::get('appointments/view/{appointment}', function (Appointment $appointment) {
+            return view('doctor.appointments.show', compact('appointment'));
+        })->name('appointments.show');
+
+        Route::get('patients', function () {
+            return view('doctor.patients.index');
+        })->name('patients');
+    });
 
     // PATIENTS
 
     Route::prefix('patient')->name('patient.')->group(function () {
-
         Route::get('/dashboard', function () {
             return view('patient.dashboard.index');
         })->name('dashboard');

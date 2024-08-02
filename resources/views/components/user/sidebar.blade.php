@@ -39,6 +39,12 @@
                 <x-sidebar-link route="receptionist.appointments" icon="calendar" label="Citas médicas" />
             @endcan
 
+            @can('allowDoctor')
+                <x-sidebar-link route="doctor.dashboard" icon="home" label="Home" />
+                <x-sidebar-link route="doctor.appointments" icon="calendar" label="Citas médicas" />
+                <x-sidebar-link route="doctor.patients" icon="users" label="Pacientes" />
+            @endcan
+
         </ul>
     </div>
 </aside>

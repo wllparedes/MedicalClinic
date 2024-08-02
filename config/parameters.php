@@ -22,8 +22,15 @@ return [
         'category_create' => 'Categoría creada con éxito!',
         'name_required' => 'El campo nombre es requerido.',
         'product_create' => 'Producto creado con éxito!',
+        'specialty_create' => 'Especialidad creado con éxito!',
         'appointment_request' => 'Cita médica solicitada con éxito!',
-        'appointment_response' => 'Cita médica evaluada con éxito!'
+        'appointment_response' => 'Cita médica evaluada con éxito!',
+        'updated_details' => 'Detalles de la cita médica actualizado!',
+        'save_record_?' => 'Guardar la información?',
+        'operation_success' => 'Información guardada con éxito!',
+        'treatment_success' => 'Tratamiento registrado con éxito!',
+        'medicine_success' => 'Medicina añadida con éxito!',
+        'yes_guarded' => 'Si, guardarlo'
     ],
 
     'roles' => [

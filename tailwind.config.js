@@ -29,6 +29,10 @@ export default {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
+            transitionProperty: {
+                height: "height",
+                spacing: "margin, padding",
+            },
         },
     },
     darkMode: "class",

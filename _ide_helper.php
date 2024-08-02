@@ -18950,6 +18950,682 @@ namespace Livewire {
             }
     }
 
+namespace Omnia\LivewireCalendar {
+            /**
+     * 
+     *
+     * @see \Omnia\LivewireCalendar\Skeleton\SkeletonClass
+     */        class LivewireCalendarFacade {
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function mount($initialYear = null, $initialMonth = null, $weekStartsAt = null, $calendarView = null, $dayView = null, $eventView = null, $dayOfWeekView = null, $dragAndDropClasses = null, $beforeCalendarView = null, $afterCalendarView = null, $pollMillis = null, $pollAction = null, $dragAndDropEnabled = true, $dayClickEnabled = true, $eventClickEnabled = true, $extras = [])
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->mount($initialYear, $initialMonth, $weekStartsAt, $calendarView, $dayView, $eventView, $dayOfWeekView, $dragAndDropClasses, $beforeCalendarView, $afterCalendarView, $pollMillis, $pollAction, $dragAndDropEnabled, $dayClickEnabled, $eventClickEnabled, $extras);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function afterMount($extras = [])
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->afterMount($extras);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function setupViews($calendarView = null, $dayView = null, $eventView = null, $dayOfWeekView = null, $beforeCalendarView = null, $afterCalendarView = null)
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->setupViews($calendarView, $dayView, $eventView, $dayOfWeekView, $beforeCalendarView, $afterCalendarView);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function setupPoll($pollMillis, $pollAction)
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->setupPoll($pollMillis, $pollAction);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function goToPreviousMonth()
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->goToPreviousMonth();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function goToNextMonth()
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->goToNextMonth();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function goToCurrentMonth()
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->goToCurrentMonth();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function calculateGridStartsEnds()
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->calculateGridStartsEnds();
+        }
+                    /**
+         * 
+         *
+         * @throws Exception
+         * @static 
+         */        public static function monthGrid()
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->monthGrid();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function events()
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->events();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function getEventsForDay($day, $events)
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->getEventsForDay($day, $events);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function onDayClick($year, $month, $day)
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->onDayClick($year, $month, $day);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function onEventClick($eventId)
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->onEventClick($eventId);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function onEventDropped($eventId, $year, $month, $day)
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->onEventDropped($eventId, $year, $month, $day);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function getId()
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->getId();
+        }
+                    /**
+         * 
+         *
+         * @return \Illuminate\Contracts\View\Factory|\View 
+         * @throws Exception
+         * @static 
+         */        public static function render()
+        {
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->render();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function id()
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->id();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function setId($id)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->setId($id);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function setName($name)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->setName($name);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function getName()
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->getName();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function skipRender($html = null)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->skipRender($html);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function skipMount()
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->skipMount();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function skipHydrate()
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->skipHydrate();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function tap($callback)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->tap($callback);
+        }
+                    /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param object|callable $macro
+         * @param-closure-this static  $macro
+         * @return void 
+         * @static 
+         */        public static function macro($name, $macro)
+        {            //Method inherited from \Livewire\Component         
+                        \Omnia\LivewireCalendar\LivewireCalendar::macro($name, $macro);
+        }
+                    /**
+         * Mix another object into the class.
+         *
+         * @param object $mixin
+         * @param bool $replace
+         * @return void 
+         * @throws \ReflectionException
+         * @static 
+         */        public static function mixin($mixin, $replace = true)
+        {            //Method inherited from \Livewire\Component         
+                        \Omnia\LivewireCalendar\LivewireCalendar::mixin($mixin, $replace);
+        }
+                    /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */        public static function hasMacro($name)
+        {            //Method inherited from \Livewire\Component         
+                        return \Omnia\LivewireCalendar\LivewireCalendar::hasMacro($name);
+        }
+                    /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */        public static function flushMacros()
+        {            //Method inherited from \Livewire\Component         
+                        \Omnia\LivewireCalendar\LivewireCalendar::flushMacros();
+        }
+                    /**
+         * Dynamically handle calls to the class.
+         *
+         * @param string $method
+         * @param array $parameters
+         * @return mixed 
+         * @throws \BadMethodCallException
+         * @static 
+         */        public static function macroCall($method, $parameters)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->macroCall($method, $parameters);
+        }
+                    /**
+         * Authorize a given action for the current user.
+         *
+         * @param mixed $ability
+         * @param mixed|array $arguments
+         * @return \Illuminate\Auth\Access\Response 
+         * @throws \Illuminate\Auth\Access\AuthorizationException
+         * @static 
+         */        public static function authorize($ability, $arguments = [])
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->authorize($ability, $arguments);
+        }
+                    /**
+         * Authorize a given action for a user.
+         *
+         * @param \Illuminate\Contracts\Auth\Authenticatable|mixed $user
+         * @param mixed $ability
+         * @param mixed|array $arguments
+         * @return \Illuminate\Auth\Access\Response 
+         * @throws \Illuminate\Auth\Access\AuthorizationException
+         * @static 
+         */        public static function authorizeForUser($user, $ability, $arguments = [])
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->authorizeForUser($user, $ability, $arguments);
+        }
+                    /**
+         * Authorize a resource action based on the incoming request.
+         *
+         * @param string|array $model
+         * @param string|array|null $parameter
+         * @param array $options
+         * @param \Illuminate\Http\Request|null $request
+         * @return void 
+         * @static 
+         */        public static function authorizeResource($model, $parameter = null, $options = [], $request = null)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        $instance->authorizeResource($model, $parameter, $options, $request);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function hasProperty($prop)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->hasProperty($prop);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function getPropertyValue($name)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->getPropertyValue($name);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function fill($values)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->fill($values);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function reset(...$properties)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->reset(...$properties);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function pull($properties = null)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->pull($properties);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function only($properties)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->only($properties);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function except($properties)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->except($properties);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function all()
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->all();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function dispatch($event, ...$params)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->dispatch($event, ...$params);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function redirect($url, $navigate = false)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->redirect($url, $navigate);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function redirectRoute($name, $parameters = [], $absolute = true, $navigate = false)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->redirectRoute($name, $parameters, $absolute, $navigate);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function redirectIntended($default = '/', $navigate = false)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->redirectIntended($default, $navigate);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function redirectAction($name, $parameters = [], $absolute = true, $navigate = false)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->redirectAction($name, $parameters, $absolute, $navigate);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function stream($to, $content, $replace = false)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->stream($to, $content, $replace);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function getAttributes()
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->getAttributes();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function setPropertyAttribute($property, $attribute)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->setPropertyAttribute($property, $attribute);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function mergeOutsideAttributes($attributes)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->mergeOutsideAttributes($attributes);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function addRulesFromOutside($rules)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->addRulesFromOutside($rules);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function addMessagesFromOutside($messages)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->addMessagesFromOutside($messages);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function addValidationAttributesFromOutside($validationAttributes)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->addValidationAttributesFromOutside($validationAttributes);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function getErrorBag()
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->getErrorBag();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function addError($name, $message)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->addError($name, $message);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function setErrorBag($bag)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->setErrorBag($bag);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function resetErrorBag($field = null)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->resetErrorBag($field);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function clearValidation($field = null)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->clearValidation($field);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function resetValidation($field = null)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->resetValidation($field);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function errorBagExcept($field)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->errorBagExcept($field);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function getRules()
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->getRules();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function rulesForModel($name)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->rulesForModel($name);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function hasRuleFor($dotNotatedProperty)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->hasRuleFor($dotNotatedProperty);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function ruleWithNumbersReplacedByStars($dotNotatedProperty)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->ruleWithNumbersReplacedByStars($dotNotatedProperty);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function missingRuleFor($dotNotatedProperty)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->missingRuleFor($dotNotatedProperty);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function withValidator($callback)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->withValidator($callback);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function validate($rules = null, $messages = [], $attributes = [])
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->validate($rules, $messages, $attributes);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function validateOnly($field, $rules = null, $messages = [], $attributes = [], $dataOverrides = [])
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->validateOnly($field, $rules, $messages, $attributes, $dataOverrides);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function getFormObjects()
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->getFormObjects();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function js($expression)
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->js($expression);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function disableBackButtonCache()
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->disableBackButtonCache();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function enableBackButtonCache()
+        {            //Method inherited from \Livewire\Component         
+                        /** @var \Omnia\LivewireCalendar\LivewireCalendar $instance */
+                        return $instance->enableBackButtonCache();
+        }
+            }
+    }
+
 namespace WireUi\Facades {
             /**
      * 
@@ -23126,10 +23802,16 @@ namespace  {
             class Vite extends \Illuminate\Support\Facades\Vite {}
             class Debugbar extends \Barryvdh\Debugbar\Facades\Debugbar {}
             class Livewire extends \Livewire\Livewire {}
+            class LivewireCalendar extends \Omnia\LivewireCalendar\LivewireCalendarFacade {}
             class WireUi extends \WireUi\Facades\WireUi {}
     }
 
 
+namespace Facades\Livewire\Features\SupportFileUploads {
+    /**
+     * @mixin \Livewire\Features\SupportFileUploads\GenerateSignedUploadUrl     */
+    class GenerateSignedUploadUrl extends \Livewire\Features\SupportFileUploads\GenerateSignedUploadUrl {}
+}
 
 
 
