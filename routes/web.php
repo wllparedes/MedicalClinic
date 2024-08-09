@@ -100,6 +100,19 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::get('patients', function () {
             return view('doctor.patients.index');
         })->name('patients');
+
+        Route::get('chats', function () {
+
+            $user = auth()->user();
+
+            $patientsId = collect($user->appointments->pluck('patient_id')->unique());
+
+            $patients = Patient::whereIn('id', $patientsId)->with([
+                'file' => fn ($q) => $q->where('category', 'avatars')
+            ])->get();
+
+            return view('doctor.chat.index', compact('patients'));
+        })->name('chats');
     });
 
     // PATIENTS
@@ -112,5 +125,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::get('/appointments', function () {
             return view('patient.appointments.index');
         })->name('appointments');
+
+        Route::get('appointments/view/{appointment}', function (Appointment $appointment) {
+            return view('patient.appointments.show', compact('appointment'));
+        })->name('appointments.show');
+
     });
 });

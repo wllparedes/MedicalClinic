@@ -42,7 +42,7 @@ class EditForm extends Form
             'username' => ['required', Rule::unique('users', 'username')->ignore($this->user)],
             'dni' => ['required', Rule::unique('users', 'dni')->ignore($this->user)],
             'phone' => 'required',
-            'emergency_phone' => 'required',
+            'emergency_phone' => 'max:15',
             'email' => 'required|email',
             'gender' => 'required',
             'password' => 'nullable|min:8',

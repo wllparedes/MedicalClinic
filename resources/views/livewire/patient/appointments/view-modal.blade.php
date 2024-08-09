@@ -114,8 +114,8 @@
         @endif
 
         <div class="flex mt-4">
-            <x-button wire:click='viewDetails' right-icon="plus" teal label="Ver más detalles" wire-load-enabled
-                class="w-full" />
+            <x-button wire:click='viewDetails({{ $appointment }})' right-icon="plus" teal label="Ver más detalles"
+                wire-load-enabled class="w-full" />
         </div>
 
     @endif

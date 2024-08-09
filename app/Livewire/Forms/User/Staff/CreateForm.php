@@ -21,7 +21,7 @@ class CreateForm extends Form
     public $dni;
     #[Validate('required|max:15')]
     public $phone;
-    #[Validate('required|max:15')]
+    #[Validate('max:15')]
     public $emergency_phone;
     #[Validate('required|email')]
     public $email;

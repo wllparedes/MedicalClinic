@@ -44,8 +44,7 @@
                     </div>
 
                     <div class="w-64">
-                        <x-input label="Correo (opcional)" placeholder="Ingrese el correo"
-                            wire:model.blur='createForm.email' />
+                        <x-input label="Correo" placeholder="Ingrese el correo" wire:model.blur='createForm.email' />
                     </div>
 
                     <div class="w-64">

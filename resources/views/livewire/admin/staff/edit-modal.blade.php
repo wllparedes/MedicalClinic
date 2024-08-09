@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="w-64">
-                    <x-input label="Correo (opcional)" placeholder="Ingrese el correo"
+                    <x-input label="Correo" placeholder="Ingrese el correo"
                         wire:model.blur='editForm.email' />
                 </div>
 

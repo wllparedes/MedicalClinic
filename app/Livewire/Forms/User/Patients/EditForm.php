@@ -41,7 +41,7 @@ class EditForm extends Form
             'dni' => ['required', Rule::unique('patients', 'dni')->ignore($this->patient)],
             'phone' => 'required',
             'birthday' => 'required|date',
-            'emergency_phone' => 'required',
+            'emergency_phone' => 'max:15',
             'email' => 'required|email',
             'gender' => 'required',
             'password' => 'nullable|min:8',
@@ -55,7 +55,7 @@ class EditForm extends Form
         $data = $this->all();
         $data['gender'] = getGenderChar($this->gender);
         $data['password'] = Hash::make($this->password);
-        $data['slug'] = Str::slug($this->names . '-' . $this->last_names);
+        $data['slug'] = Str::slug("{$this->names}-{$this->last_names}");
 
         $this->patient->update($data);
 

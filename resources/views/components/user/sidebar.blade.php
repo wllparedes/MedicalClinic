@@ -43,6 +43,7 @@
                 <x-sidebar-link route="doctor.dashboard" icon="home" label="Home" />
                 <x-sidebar-link route="doctor.appointments" icon="calendar" label="Citas médicas" />
                 <x-sidebar-link route="doctor.patients" icon="users" label="Pacientes" />
+                <x-sidebar-link route="doctor.chats" icon="user-group" label="Chat" />
             @endcan
 
         </ul>

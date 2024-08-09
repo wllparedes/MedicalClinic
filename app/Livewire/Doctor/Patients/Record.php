@@ -15,6 +15,12 @@ class Record extends Component
     //     $this->redirect(route('receptionist.appointments.show', ['appointment' => $appointment]), navigate: true);
     // }
 
+    public function redirectChat()
+    {
+        $this->redirect(route('doctor.chats'), navigate: true);
+    }
+
+
     public function render()
     {
         $user = auth()->user();

@@ -28,7 +28,7 @@
                         Teléfono: {{ $patient->phone }}
                     </span>
                 </div>
-                <x-button teal label="Chatear" wire-load-enabled />
+                <x-button teal label="Chatear" wire-load-enabled wire:click='redirectChat' />
 
             </div>
         @empty

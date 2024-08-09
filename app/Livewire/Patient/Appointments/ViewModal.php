@@ -20,9 +20,9 @@ class ViewModal extends Component
         $this->openView = true;
     }
 
-    public function viewDetails()
+    public function viewDetails(Appointment $appointment)
     {
-        dd('hi');
+        $this->redirect(route('patient.appointments.show', $appointment), navigate: true);
     }
 
     public function render()
