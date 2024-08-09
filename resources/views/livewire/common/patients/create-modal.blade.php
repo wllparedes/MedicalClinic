@@ -1,5 +1,5 @@
 <div class="mb-3">
-    <x-button icon="users" sky label="Crear nuevo paciente" onclick="$openModal('openCreate')" />
+    <x-button icon="users" cyan label="Crear nuevo paciente" onclick="$openModal('openCreate')" />
 
     <x-modal-card blur="md" title="Crear nuevo paciente" wire:model="openCreate" width="6xl">
 
@@ -44,8 +44,7 @@
                     </div>
 
                     <div class="w-64">
-                        <x-input label="Correo (opcional)" placeholder="Ingrese el correo"
-                            wire:model.blur='createForm.email' />
+                        <x-input label="Correo" placeholder="Ingrese el correo" wire:model.blur='createForm.email' />
                     </div>
 
                     <div class="w-64">
@@ -73,7 +72,7 @@
             <div class="flex justify-end gap-x-4">
                 <div class="flex gap-4">
                     <x-button flat secondary label="{{ __('Cancel') }}" x-on:click="close" />
-                    <x-mini-button rounded wire:click="save" sky icon="check" spinner="save" />
+                    <x-mini-button rounded wire:click="save" cyan icon="check" spinner="save" />
                 </div>
             </div>
         </x-slot>

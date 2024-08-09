@@ -75,7 +75,7 @@ final class Table extends PowerGridComponent
     {
         return PowerGrid::fields()
             ->add('id')
-            ->add('avatar', fn ($dish) => '<img class="w-10 h-10 shrink-0 grow-0 rounded-full" src="' . verifyMultipleAvatar($dish->file, $dish->names) . '">')
+            ->add('avatar', fn ($dish) => '<img class="w-16 h-16 shrink-0 grow-0 rounded-full border border-slate-200 shadow-lg" src="' . verifyMultipleAvatar($dish->file, $dish->names) . '">')
             ->add('names', fn ($dish) => '<a wire:navigate href="' . route('admin.staff.show', $dish) . '" class="text-link-adp">' . $dish->names . '</a>')
             ->add('names_export', fn ($dish) => $dish->names)
             ->add('last_names')
@@ -200,6 +200,11 @@ final class Table extends PowerGridComponent
     public function actions(User $row): array
     {
         return [
+            Button::add('specialties')
+                ->slot('<x-icon name="server" class="w-5 h-5" />')
+                ->id()
+                ->class('pg-btn pg-btn-blue')
+                ->dispatch('addSpecialties', [$row->id]),
             Button::add('edit')
                 ->slot('<x-icon name="pencil" class="w-5 h-5" />')
                 ->id()
@@ -216,8 +221,8 @@ final class Table extends PowerGridComponent
     public function actionRules($row): array
     {
         return [
-            Rule::button('delete')
-                ->when(fn ($row) => $row->id === Auth::user()->id)
+            Rule::button('specialties')
+                ->when(fn ($row) => $row->role !== 'doctor')
                 ->hide(),
         ];
     }

@@ -35,7 +35,7 @@
             {{ __('Saved.') }}
         </x-action-message>
 
-        <x-button sky type="submit">
+        <x-button cyan type="submit">
             {{ __('Save') }}
         </x-button>
     </x-slot>

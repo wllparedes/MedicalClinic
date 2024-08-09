@@ -1,13 +1,15 @@
 <div class="relative" x-data="{ open: false }" x-on:click.away="open = false">
-    <button type="button"
-        class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-secondary-700 dark:focus:ring-gray-600"
+    <button type="button" class="flex text-sm rounded-full focus:ring-4 focus:ring-secondary-200"
         x-on:click="open = !open">
         <span class="sr-only">Open user menu</span>
-        <img class="w-8 h-8 rounded-full" src="{{ verifyAvatar($avatar) }}" alt="user photo">
+        <img class="w-10 h-10 rounded-full" src="{{ verifyAvatar($avatar) }}" alt="user photo">
     </button>
 
     <div class="absolute right-0 z-50 my-4 w-40 text-base list-none bg-white divide-y divide-gray-100 rounded shadow"
-        id="dropdown-user" x-show="open" x-cloak>
+        id="dropdown-user" x-show="open" x-cloak x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-90">
         <div class="px-4 py-3" role="none">
             <p class="text-sm text-gray-900 dark:text-white" role="none">
                 {{ $username }}

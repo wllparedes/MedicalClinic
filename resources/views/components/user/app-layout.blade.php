@@ -9,8 +9,8 @@
     <title>Personal - Clinica</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    {{-- <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> --}}
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -23,23 +23,27 @@
 
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-sans antialiased bg-gray-50">
+
+    <x-dialog />
+
+    <x-notifications />
 
     <x-user.sidebar />
 
-    <div class="min-h-screen bg-gray-100">
+    <livewire:navigation-menu />
 
-        <livewire:navigation-menu />
-
-        <!-- Page Content -->
-        <main>
-            <x-dialog />
-
-             <x-notifications />
-
-            {{ $slot }}
-        </main>
-    </div>
+    <!-- Page Content -->
+    <main class="main-content bg-gray-50" x-data="{ isNarrow: window.innerWidth <= 640, resize: $persist(false) }" x-on:sidebar-function.window="resize = !resize"
+        x-on:resize.window="isNarrow = window.innerWidth <= 640, resize = false"
+        :class="{
+            'pl-[90px]': resize && !isNarrow,
+            'pl-[288px]': !resize && !isNarrow,
+            'pl-[5px] pr-[5px]': isNarrow,
+            'pr-[30px]': !isNarrow
+        }">
+        {{ $slot }}
+    </main>
 
     <x-footer />
 

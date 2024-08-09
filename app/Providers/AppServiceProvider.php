@@ -29,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
             return $user->role === 'receptionist';
         });
 
+        Gate::define('allowDoctor', function ($user) {
+            return $user->role === 'doctor';
+        });
+
         Gate::define('allowPatientPending', function ($user, Patient $patient) {
             return $patient->status === 'pending';
         });

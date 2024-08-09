@@ -4,7 +4,7 @@ use Illuminate\Support\Carbon;
 
 function setActive($routeName)
 {
-    return request()->routeIs($routeName) ? 'bg-white text-link-active' : '';
+    return request()->routeIs($routeName) ? 'bg-white text-link-active shadow-lg' : '';
 }
 
 // function getRuleUser($role)
@@ -17,6 +17,30 @@ function setActive($routeName)
 
 //     return $rules[$role];
 // }
+
+function getDayNameSpanish($dayName)
+{
+    return match ($dayName) {
+        'Monday' => 'Lunes',
+        'Tuesday' => 'Martes',
+        'Wednesday' => 'Miércoles',
+        'Thursday' => 'Jueves',
+        'Friday' => 'Viernes',
+        'Saturday' => 'Sábado',
+        'Sunday' => 'Domingo',
+        default => 'Not found'
+    };
+}
+
+function getTypeAppointments($type)
+{
+    return match ($type) {
+        'normal' => 'Normal',
+        'virtual' => 'Virtual',
+        default => 'Not found'
+    };
+}
+
 
 function getGenderChar($gender)
 {
@@ -71,6 +95,7 @@ function getBadgeStatusBlade($status)
         'approved' => '<x-badge positive label="Aprovado"/>',
         'pending' => '<x-badge warning label="Pendiente"/>',
         'rejected' => '<x-badge negative label="Rechazado"/>',
+        'cancelled' => '<x-badge amber label="Cancelado"/>',
         default => '<x-badge info label="Desconocido"/>'
     };
 }
@@ -96,7 +121,7 @@ function verifyAvatar($file)
     if ($file) {
         return $file->file_url;
     }
-    return 'https://ui-avatars.com/api/?name=' . urlencode($user->names) . '&color=2452d1&background=f4f4f4';
+    return 'https://ui-avatars.com/api/?name=' . urlencode($user->names) . '&color=0284c7&background=ffffff';
 }
 
 function verifyMultipleAvatar($file, $names)
@@ -104,7 +129,7 @@ function verifyMultipleAvatar($file, $names)
     if ($file) {
         return $file->file_url;
     }
-    return 'https://ui-avatars.com/api/?name=' . urlencode($names) . '&color=2452d1&background=f4f4f4';
+    return 'https://ui-avatars.com/api/?name=' . urlencode($names) . '&color=0284c7&background=ffffff';
 }
 
 function getRouteDashboard()
@@ -127,6 +152,25 @@ function getLabelScheduleHour($schedule)
     return formatTimeHs($schedule->start)  . " a " . formatTimeHs($schedule->end);
 }
 
+function getDescription($description, $length = 18)
+{
+    if ($description) {
+        return Str::limit($description, $length);
+    } else {
+        return '-';
+    }
+}
+
+function getLink($link, $length = 20)
+{
+    return $link
+        ? "<a target='_BLANK' href='" .
+        $link .
+        "' class='text-link-adp'>" .
+        getDescription($link, $length) .
+        '</a>'
+        : 'Sin enlace.';
+}
 
 // CARBON
 

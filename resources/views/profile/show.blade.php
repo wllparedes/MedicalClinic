@@ -1,12 +1,12 @@
-<x-app-layout>
+<x-user.app-layout>
 
-    <x-navigation class="p-4 w-full">
+    <x-navigation>
         <x-nav-tab route="{{ getRouteDashboard() }}" label="Inicio" icon="home" />
         <x-nav-tab route="profile.show" label="Perfil" :prev="true" />
     </x-navigation>
 
-    <div class="p-4 w-full">
-        <div class="p-4rounded-lg shadow-xl shadow-slate-200 bg-white">
+    <div class="">
+        <div class="p-4 rounded-lg shadow-xl shadow-slate-200 bg-white">
             <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
 
                 @if (Laravel\Fortify\Features::canUpdateProfileInformation())
@@ -51,4 +51,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-user.app-layout>

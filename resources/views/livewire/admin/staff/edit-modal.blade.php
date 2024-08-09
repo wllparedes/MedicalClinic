@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="w-64">
-                    <x-input label="Correo (opcional)" placeholder="Ingrese el correo"
+                    <x-input label="Correo" placeholder="Ingrese el correo"
                         wire:model.blur='editForm.email' />
                 </div>
 
@@ -75,7 +75,7 @@
                         <div class="flex flex-col items-center justify-center w-full">
 
                             @if (!$editForm->image and !$imageUrl)
-                                <x-icon name="arrow-up-tray" class="w-16 h-16 text-blue-600" />
+                                <x-icon name="cloud-arrow-up" class="w-16 h-16 text-blue-600" />
                                 <p class="text-blue-600 text-sm">Click o deja caer la imagen de perfil</p>
                                 <p class="text-blue-900 text-xs">(opcional)</p>
                             @elseif ($imageUrl and !$editForm->image)
@@ -127,7 +127,7 @@
         <div class="flex justify-end gap-x-4">
             <div class="flex gap-4">
                 <x-button flat secondary label="{{ __('Cancel') }}" x-on:click="close" />
-                <x-mini-button rounded wire:click="update" sky icon="check" spinner="update" />
+                <x-mini-button rounded wire:click="update" cyan icon="check" spinner="update" />
             </div>
         </div>
     </x-slot>

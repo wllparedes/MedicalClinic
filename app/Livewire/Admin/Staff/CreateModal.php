@@ -28,7 +28,7 @@ class CreateModal extends Component
         $this->createForm->save();
         $this->dispatch('table:refresh');
         $this->openCreate = false;
-        $this->dialog()->success(config('parameters.messages.user_create'));
+        $this->dialog()->success(config('parameters.messages.staff_create'));
 
     }
 

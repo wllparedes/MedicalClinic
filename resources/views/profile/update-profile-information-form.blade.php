@@ -41,7 +41,7 @@
                 </span>
             </div>
 
-            <x-button sky class="mt-2 me-2" type="button" x-on:click.prevent="$refs.photo.click()">
+            <x-button cyan class="mt-2 me-2" type="button" x-on:click.prevent="$refs.photo.click()">
                 {{ __('Select A New Photo') }}
             </x-button>
 
@@ -82,7 +82,7 @@
             {{ __('Saved.') }}
         </x-action-message>
 
-        <x-button wire:loading.attr="disabled" wire:target="photo" sky type="submit">
+        <x-button wire:loading.attr="disabled" wire:target="photo" cyan type="submit">
             {{ __('Save') }}
         </x-button>
     </x-slot>

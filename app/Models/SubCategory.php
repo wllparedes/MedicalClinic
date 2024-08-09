@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -29,4 +30,12 @@ class SubCategory extends Model
         return $this->belongsToMany(Product::class, 'product_sub_category', 'sub_category_id', 'product_id');
     }
 
+    // Mutators
+
+    protected function name(): Attribute
+    {
+        return new Attribute(
+            set: fn ($value) => ucfirst($value)
+        );
+    }
 }

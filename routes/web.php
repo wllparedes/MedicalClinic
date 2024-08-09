@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Models\Appointment;
 use App\Models\Patient;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,14 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::get('/patients/{patient:slug}', function (Patient $patient) {
             return view('admin.patients.show', compact('patient'));
         })->name('patients.show');
+
+        Route::get('/categories', function () {
+            return view('admin.categories.index');
+        })->name('categories');
+
+        Route::get('/products', function () {
+            return view('admin.products.index');
+        })->name('products');
     });
 
     Route::middleware(['check.role:receptionist'])->prefix('receptionist')->name('receptionist.')->group(function () {
@@ -64,6 +73,62 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::get('/doctors/{doctor:slug}', function (User $doctor) {
             return view('receptionist.doctors.show', compact('doctor'));
         })->name('doctors.show');
+
+        Route::get('/appointments', function () {
+            return view('receptionist.appointments.index');
+        })->name('appointments');
+
+        Route::get('/appointments/{appointment}', function (Appointment $appointment) {
+            return view('receptionist.appointments.show', compact('appointment'));
+        })->name('appointments.show');
+    });
+
+    Route::middleware(['check.role:doctor'])->prefix('doctor')->name('doctor.')->group(function () {
+
+        Route::get('dashboard', function () {
+            return view('doctor.dashboard.index');
+        })->name('dashboard');
+
+        Route::get('appointments', function () {
+            return view('doctor.appointments.index');
+        })->name('appointments');
+
+        Route::get('appointments/view/{appointment}', function (Appointment $appointment) {
+            return view('doctor.appointments.show', compact('appointment'));
+        })->name('appointments.show');
+
+        Route::get('patients', function () {
+            return view('doctor.patients.index');
+        })->name('patients');
+
+        Route::get('chats', function () {
+
+            $user = auth()->user();
+
+            $patientsId = collect($user->appointments->pluck('patient_id')->unique());
+
+            $patients = Patient::whereIn('id', $patientsId)->with([
+                'file' => fn ($q) => $q->where('category', 'avatars')
+            ])->get();
+
+            return view('doctor.chat.index', compact('patients'));
+        })->name('chats');
+    });
+
+    // PATIENTS
+
+    Route::prefix('patient')->name('patient.')->group(function () {
+        Route::get('/dashboard', function () {
+            return view('patient.dashboard.index');
+        })->name('dashboard');
+
+        Route::get('/appointments', function () {
+            return view('patient.appointments.index');
+        })->name('appointments');
+
+        Route::get('appointments/view/{appointment}', function (Appointment $appointment) {
+            return view('patient.appointments.show', compact('appointment'));
+        })->name('appointments.show');
 
     });
 });

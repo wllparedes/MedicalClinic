@@ -21,7 +21,7 @@ class CreateForm extends Form
     public $dni;
     #[Validate('required|max:15')]
     public $phone;
-    #[Validate('required|max:15')]
+    #[Validate('max:15')]
     public $emergency_phone;
     #[Validate('required|email')]
     public $email;
@@ -34,6 +34,12 @@ class CreateForm extends Form
     #[Validate('nullable|image|max:1024|mimes:jpg,jpeg,png')]
     public $image;
 
+
+    /**
+     * Summary of uploadAvatar
+     * @param User $user Update User avatar
+     * @return void
+     */
     public function uploadAvatar($user)
     {
         $fileService = new FileService();
@@ -64,5 +70,9 @@ class CreateForm extends Form
         ]);
 
         $this->uploadAvatar($user);
+
+        if ($user) {
+            $this->reset();
+        }
     }
 }

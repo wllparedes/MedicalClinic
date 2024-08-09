@@ -7,11 +7,29 @@
 
     <x-section-content>
 
-        <livewire:admin.staff.create-modal lazy />
+        <x-dropdown-card title="Especialidades" open="0">
 
-        <livewire:admin.staff.edit-modal />
+            <livewire:admin.specialties.create-modal lazy />
 
-        <livewire:admin.staff.table />
+            <livewire:admin.specialties.edit-modal />
+
+            <livewire:admin.specialties.table />
+
+        </x-dropdown-card>
+
+        <br>
+
+        <x-dropdown-card title="Personal">
+
+            <livewire:admin.staff.create-modal lazy />
+
+            <livewire:admin.staff.edit-modal />
+
+            <livewire:admin.staff.add-specialties />
+
+            <livewire:admin.staff.table />
+
+        </x-dropdown-card>
 
     </x-section-content>
 
