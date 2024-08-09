@@ -58,7 +58,6 @@
 
             <x-dropdown-card title="Cita médica" class="w-[600px]">
 
-                {{-- <livewire:doctor.appointments.details :appointment="$appointment" /> --}}
                 <livewire:patient.appointments.details :appointment="$appointment" />
 
             </x-dropdown-card>
@@ -67,13 +66,16 @@
 
         <br>
 
-        {{-- <x-dropdown-card title="Diagnostico">
+        {{-- <x-dropdown-card title="Diagnostico"> --}}
 
-            <livewire:doctor.appointments.diagnosis :appointment="$appointment" />
+            {{-- <livewire:doctor.appointments.diagnosis :appointment="$appointment" /> --}}
+            {{-- <livewire:patient.appointments.diagnosis :appointment="$appointment" /> --}}
 
-            <livewire:doctor.appointments.treatment :appointment="$appointment" />
 
-        </x-dropdown-card> --}}
+
+            {{-- <livewire:doctor.appointments.treatment :appointment="$appointment" /> --}}
+
+        {{-- </x-dropdown-card> --}}
 
 
     </x-section-content>
